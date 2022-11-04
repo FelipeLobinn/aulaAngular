@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+    <head>
+        <title>Começando com HTML</title>
+        <meta charset="utf-8">
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="buttonsAlert">
+            <button id="click">Meu Twitter</button>
+            <br />
+            <button onclick="exibirVandal()">Vandal</button>
+        </div>
+        <div class="formUser">
+            <label>Nome:</label>
+            <input type="text" id="userNome" value="" />
+            <button onclick="nomeAlert()">Enviar</button>
+            <br />
+            <label>Idade:</label>
+            <input type="number" min="0" id="userIdade"/>
+            <button onclick="idadeAlert()">Enviar</button>           
+        </div>
+        <div id="imageExp">
+            <a href="https://playvalorant.com/pt-br/" target="_blank"><img src="images/VandalSaqueador.jpeg" class="VandalSaqueador" id="VandalImg" alr="PrintScreen do jogo Valorant, onde aparece a skin Vandal Saqueador na variante padrão"/></a>
+        </div>
+    </body>
+    <script>
+        document.getElementById("click").addEventListener("click", function(){
+            alert("Me segue no Twitter, pae! \n @felipeSinn_dev");
+        })
+    </script>
+    <script src="scripts/scripts.js"></script>
+</html>
