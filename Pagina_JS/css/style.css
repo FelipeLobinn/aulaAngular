@@ -1,0 +1,57 @@
+body {
+  text-align: center;
+  background-color: lightgray;
+}
+
+.buttonsAlert button {
+  padding: 8px 10px;
+  border-radius: 15px;
+  border: 1px solid gray;
+  box-shadow: 3px 5px 5px gray;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.buttonsAlert button:hover {
+  background-color: rgb(173, 173, 173);
+  box-shadow: 3px 5px 5px rgb(48, 48, 48);
+}
+
+.formUser {
+  margin: 40px;
+}
+
+.formUser button {
+  padding: 4px 6px;
+  border-radius: 15px;
+  border: 1px solid gray;
+  box-shadow: 3px 5px 5px gray;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.formUser button:hover {
+  background-color: rgb(173, 173, 173);
+  box-shadow: 3px 5px 5px rgb(48, 48, 48);
+}
+
+.formUser input {
+  padding: 4px;
+  padding-left: 6px;
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+.formUser input:hover {
+  box-shadow: 3px 5px 5px gray;
+}
+
+#VandalImg {
+  display: none;
+  width: 600px;
+  border-radius: 25px;
+}
+
+#VandalImg:hover {
+  box-shadow: 3px 5px 5px rgb(48, 48, 48);
+}
