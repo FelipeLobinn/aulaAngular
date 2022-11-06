@@ -2,11 +2,70 @@ body{
     text-align: center;
 }
 
-.buttonRedirect button{
-    padding: 4px 6px;
+#cadastroForm{
+    display: inline;
+}
+
+#loginForm{
+    display: none;
+}
+
+.formContainer{
+    position: absolute;
+    top: 35%;   
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    max-width: 400px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: lightgray;
+    box-shadow: 5px 5px 8px rgb(60, 90, 77);
+}
+
+.formContainer h3{
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 35px;
+    text-shadow: 15px 5px 4px gray;
+}
+
+.formContainer input{
+    margin: 7px;
+    width: 64%;
+    padding: 7px 3%;
+    border-radius: 11px;
+    border: 1px solid gray;
+    outline: none;
+}
+
+.formContainer input:hover{
+    border: 1px solid black;
+    box-shadow: 5px 3px 5px gray;
+}
+
+.formContainer button{
+    margin: 25px;
+    width: 50%;
+    padding: 9px;
     border-radius: 15px;
     border: 1px solid gray;
-    box-shadow: 3px 5px 5px gray;
-    margin-top: 20px;
+}
+
+.formContainer button:hover{
+    border: 1px solid black;
+    background-color: lightgray;
+    box-shadow: 5px 3px 5px gray;
+}
+
+.formContainer #mudarForm{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30%;
     cursor: pointer;
+}
+
+.formContainer #mudarForm:hover{
+    text-decoration: underline;
 }

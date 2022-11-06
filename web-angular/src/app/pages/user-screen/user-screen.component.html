@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-
-    </head>
-    <body>
-        <div class="buttonRedirect">
-            <button (click)="irMenu()">Ir para Menu</button>
-        </div>
-    </body>
+  <body>
+    <!-- <div class="buttonRedirect">
+      <button (click)="irMenu()">Ir para Menu</button>
+    </div> -->
+    <div class="formContainer">
+      <form method="POST" id="cadastroForm">
+        <h3>Cadastro</h3>
+        <input type="email" id="emailTxt" placeholder="Email" required />
+        <br />
+        <input type="password" id="passwordTxt" placeholder="Senha" required />
+        <br />
+        <input type="password" id="passwordConfirmTxt" placeholder="Confirmar Senha" required />
+        <br />
+        <button>Enviar</button>
+        <p (click)="abrirLogin()" id="mudarForm">Fazer Login</p>
+      </form>
+      <form method="POST" id="loginForm">
+        <h3>Login</h3>
+        <input type="email" id="emailTxt" placeholder="Email" required />
+        <br />
+        <input type="password" id="passwordTxt" placeholder="Senha" required />
+        <br />
+        <button>Enviar</button>
+        <p (click)="abrirCadastro()" id="mudarForm">Fazer Cadastro</p>
+      </form>
+    </div>
+  </body>
 </html>

@@ -17,4 +17,31 @@ export class UserScreenComponent implements OnInit {
   irMenu(){
     this.route.navigate(['menu-page'])
   }
+
+  abrirLogin() {
+    let div = document.getElementById('loginForm');
+    
+    this.fecharCadastro()
+    div!.style.display = "inline";
+  }
+
+  abrirCadastro() {
+    let div = document.getElementById('cadastroForm');
+    
+    this.fecharLogin()
+
+    div!.style.display = "inline";
+  }
+
+  fecharLogin() {
+    let div = document.getElementById('loginForm');
+    
+    div!.style.display = "none";
+  }
+
+  fecharCadastro() {
+    let div = document.getElementById('cadastroForm');
+    
+    div!.style.display = "none";
+  }
 }
