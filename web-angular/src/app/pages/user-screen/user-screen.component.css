@@ -2,7 +2,7 @@ body{
     text-align: center;
 }
 
-#cadastroForm{
+#registerForm{
     display: inline;
 }
 
@@ -58,7 +58,7 @@ body{
     box-shadow: 5px 3px 5px gray;
 }
 
-.formContainer #mudarForm{
+.formContainer #changeForm{
     position: relative;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -66,6 +66,13 @@ body{
     cursor: pointer;
 }
 
-.formContainer #mudarForm:hover{
+.formContainer #changeForm:hover{
     text-decoration: underline;
+}
+
+.formContainer .errorTxt{
+    position: absolute;
+    padding: 13px 0px;
+    display: none;
+    color: rgb(165, 7, 7);
 }
