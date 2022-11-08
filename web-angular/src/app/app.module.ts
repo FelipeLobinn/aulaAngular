@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserScreenComponent } from './pages/user-screen/user-screen.component';
 import { MenuPageComponent } from './pages/menu-page/menu-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { MenuPageComponent } from './pages/menu-page/menu-page.component';
   ],
   imports: [
     BrowserModule,
+    NgbModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
