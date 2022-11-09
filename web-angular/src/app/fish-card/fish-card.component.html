@@ -1,0 +1,20 @@
+<div class="container containerCard ">
+    <div class="row rowCardM">
+        <div class="col-sm">
+            <img [src]="dataFishes['Species Illustration Photo']['src']" [alt]="dataFishes['Species Illustration Photo']['alt']" class="cardImg" />
+        </div>
+    </div>
+    <div class="row rowCardM cardTxt">
+        <div class="col-sm">
+            <!-- <p class="harvestType"> {{ dataFishes['Harvest Type'] }} </p> -->
+            <p class="lastUpdate">{{ dataFishes['last_update'] }}</p>
+            <h3>{{ dataFishes['Species Name'] }}</h3>
+            <p>{{ dataFishes['Taste'] }}</p>
+        </div>
+    </div>
+    <div class="row rowCardS cardButton">
+        <div class="col-sm">
+            <button (click)="aaa()">READ MORE</button>
+        </div>
+    </div>
+</div>

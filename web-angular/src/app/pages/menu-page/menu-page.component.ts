@@ -24,9 +24,9 @@ export class MenuPageComponent implements OnInit {
   }
 
   getFisheSpecies(){
-    this.apiServ.getFishSpecies().subscribe((res)=>{
-      //this.dataMenu = res;
-      console.log(res);
+    this.apiServ.getFishSpecies().subscribe((res) => {
+      this.dataMenu = res;
+      console.log(this.dataMenu);
     })
   }
 }
