@@ -1,9 +1,9 @@
-<body>
-    <div class="container"  >
-        <div class="row">
-            <div class="col-sm-3" *ngFor="let data of dataMenu">
-                <app-fish-card [dataFishes]="data"></app-fish-card>
-            </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm" *ngFor="let data of dataMenu">
+            <app-fish-card [dataFishes]="data"></app-fish-card>
         </div>
     </div>
-</body>
+</div>
+

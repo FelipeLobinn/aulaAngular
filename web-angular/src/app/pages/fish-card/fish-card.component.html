@@ -7,8 +7,8 @@
     <div class="row rowCardM cardTxt">
         <div class="col-sm">
             <!-- <p class="harvestType"> {{ dataFishes['Harvest Type'] }} </p> -->
-            <p class="lastUpdate">{{ dataFishes['last_update'] }}</p>
-            <h3>{{ dataFishes['Species Name'] }}</h3>
+            <p class="protein">{{ dataFishes['Protein'] | diary }}</p>
+            <h3>{{ dataFishes['Species Name'].split(' ').slice(0,1) }}</h3>
             <p>{{ dataFishes['Taste'] }}</p>
         </div>
     </div>

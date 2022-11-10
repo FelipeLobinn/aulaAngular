@@ -114,7 +114,4 @@ export class UserScreenComponent implements OnInit {
     }
   }
 
-  makeRegister() {
-    alert('Registrado')
-  }
 }

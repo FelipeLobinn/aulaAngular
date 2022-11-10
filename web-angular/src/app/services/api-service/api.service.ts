@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ApiService {
     private api: HttpClient
   ) { }
 
-  getFishSpecies() {
-    return this.api.get(environment.apiBase + 'species')
+  getFishSpecies() : Observable<any[]> {
+    return this.api.get<any>(environment.apiBase + 'species').pipe(map((el) => el.slice(0,30)))
   }
 }
