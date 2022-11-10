@@ -1,0 +1,12 @@
+<div class="fishContainer">
+    <div class="fishName">
+        <h3>{{dataFishes['Species Name']}}</h3>
+    </div>
+    <div class="fishImg">
+        <img [src]="dataFishes['Species Illustration Photo']['src']" [alt]="dataFishes['Species Illustration Photo']['alt']" />
+    </div>
+    <div class="fishDesc">
+        <h4>Physical Description:</h4>
+        <p>{{ dataFishes['Physical Description'] }}</p>
+    </div>
+</div>

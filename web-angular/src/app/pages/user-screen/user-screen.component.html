@@ -1,29 +1,29 @@
-
-<div class="formContainer">
+<body>
+<div class="container formContainer">
   <form method="POST" id="loginForm">
     <h3>Login</h3>
-    <input type="email" id="emailLoginTxt" placeholder="Email" required (keyup)="validateEmail($event)" />
+    <input type="email" id="emailLoginTxt" placeholder="Email" required (keyup)="autoValidateEmail($event)" />
     <abbr title="Email inválido"><span class="errorTxt" id="errorEmailLoginTxt">*</span></abbr>
     <br />
-    <input type="password" id="passwordLoginTxt" placeholder="Senha" required (keyup)="validatePassword($event)" />
+    <input type="password" id="passwordLoginTxt" placeholder="Senha" required (keyup)="autoValidatePassword($event)" />
     <abbr title="Senha não compatível"><span class="errorTxt" id="errorPasswordLoginTxt">*</span></abbr>
     <br />
-    <button >Enviar</button>
+    <button type="button" (click)="inputLoginValidate()">Enviar</button>
     <p (click)="openRegister()" id="changeForm">Fazer Cadastro</p>
   </form>
   <form method="POST" id="registerForm">
     <h3>Cadastro</h3>
-    <input type="email" id="emailRegisterTxt" placeholder="Email" required (keyup)="validateEmail($event)" />
+    <input type="email" id="emailRegisterTxt" placeholder="Email" required (keyup)="autoValidateEmail($event)" />
     <abbr title="Email inválido"><span class="errorTxt" id="errorEmailRegisterTxt">*</span></abbr>
     <br />
-    <input type="password" id="passwordRegisterTxt" placeholder="Senha" required (keyup)="validatePassword($event)" />
+    <input type="password" id="passwordRegisterTxt" placeholder="Senha" required (keyup)="autoValidatePassword($event)" />
     <abbr title="Senha inválida (Apenas letras e números. De 8 a 16 caracteres)"><span class="errorTxt" id="errorPasswordRegisterTxt">*</span></abbr>
     <br />
-    <input type="password" id="passwordConfirmTxt" placeholder="Confirmar Senha" required (keyup)="validateConfirmPassword($event)" />
+    <input type="password" id="passwordConfirmTxt" placeholder="Confirmar Senha" required (keyup)="autoValidateConfirmPassword($event)" />
     <abbr title="Senha não compatível"><span class="errorTxt" id="errorPasswordConfirmTxt">*</span></abbr>
     <br />
-    <button >Enviar</button>
+    <button type="button" (click)="inputRegisterValidate()">Enviar</button>
     <p (click)="openLogin()" id="changeForm">Fazer Login</p>
   </form>
-  <button (click)="goMenu()">Menu</button>
 </div>
+</body>

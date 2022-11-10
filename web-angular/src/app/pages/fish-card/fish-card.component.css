@@ -3,7 +3,8 @@
     height: 350px;
     padding: 0px;
     margin-bottom: 20px;
-    border: 1px solid rgb(231, 231, 231);
+    background-color: #fff;
+    border: 1px solid rgb(187, 186, 186);
     border-radius: 7px;
 }
 
@@ -48,7 +49,6 @@
     top: -25px;
     right: -12px;
     font-size: 10px;
-    color: #8a2be2;
 }
 
 .cardTxt .harvestType{

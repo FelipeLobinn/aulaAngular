@@ -8,7 +8,8 @@ import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FishCardComponent } from './pages/fish-card/fish-card.component';
-import { DiaryPipe } from './pipes/diary-pipe/diary.pipe'
+import { DiaryPipe } from './pipes/diary-pipe/diary.pipe';
+import { ModalComponent } from './pages/modal/modal.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DiaryPipe } from './pipes/diary-pipe/diary.pipe'
     UserScreenComponent,
     MenuPageComponent,
     FishCardComponent,
-    DiaryPipe
+    DiaryPipe,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

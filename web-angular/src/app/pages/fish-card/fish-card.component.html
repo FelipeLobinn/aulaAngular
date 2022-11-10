@@ -6,15 +6,14 @@
     </div>
     <div class="row rowCardM cardTxt">
         <div class="col-sm">
-            <!-- <p class="harvestType"> {{ dataFishes['Harvest Type'] }} </p> -->
             <p class="protein">{{ dataFishes['Protein'] | diary }}</p>
             <h3>{{ dataFishes['Species Name'].split(' ').slice(0,1) }}</h3>
-            <p>{{ dataFishes['Taste'] }}</p>
+            <p>{{ dataFishes['Physical Description'] }}</p>
         </div>
     </div>
     <div class="row rowCardS cardButton">
         <div class="col-sm">
-            <button (click)="aaa()">READ MORE</button>
+            <button (click)="readMore()">READ MORE</button>
         </div>
     </div>
 </div>

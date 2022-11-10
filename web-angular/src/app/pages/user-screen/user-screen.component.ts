@@ -9,7 +9,13 @@ import { Router } from '@angular/router';
 export class UserScreenComponent implements OnInit {
 
   @Input() menuItem: string = '';
+  
+  emailLV: boolean = false;  //email login validate
+  pwrLV: boolean = false;     //password login validate
 
+  emailRV: boolean = false;  //email register validate
+  pwrRV: boolean = false;     //password register validate
+  cPwrRV: boolean = false;    //confirm password register validate
   constructor(
     private route: Router,
   ) { }
@@ -50,68 +56,100 @@ export class UserScreenComponent implements OnInit {
     div!.style.display = 'none';
   }
 
-  validateEmail(event: any) {
+  autoValidateEmail(event: any) {
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     let emailL = (<HTMLInputElement>document.getElementById('emailLoginTxt')).value
     let emailR = (<HTMLInputElement>document.getElementById('emailRegisterTxt')).value
+    
 
-    //if (emailL !== '') {
-      if (emailRegex.test(emailL) || emailL == '') {
-        document.getElementById('emailLoginTxt')!.style.border = '';
-        document.getElementById('errorEmailLoginTxt')!.style.display = '';
-      } else {
-        document.getElementById('emailLoginTxt')!.style.border = '1px solid rgb(190, 12, 12)';
-        document.getElementById('errorEmailLoginTxt')!.style.display = 'inline';
-      }
-    //}
-    //if (emailR !== '') {
-      if (emailRegex.test(emailR) || emailR == '') {
-        document.getElementById('emailRegisterTxt')!.style.border = '';
-        document.getElementById('errorEmailRegisterTxt')!.style.display = '';
-      } else {
-        document.getElementById('emailRegisterTxt')!.style.border = '1px solid rgb(190, 12, 12)';
-        document.getElementById('errorEmailRegisterTxt')!.style.display = 'inline';
-      }
-    //}
+    if (emailRegex.test(emailL) || emailL == '') {
+      document.getElementById('emailLoginTxt')!.style.border = '';
+      document.getElementById('errorEmailLoginTxt')!.style.display = '';
+      this.emailLV = true;
+    } else {
+      document.getElementById('emailLoginTxt')!.style.border = '1px solid rgb(190, 12, 12)';
+      document.getElementById('errorEmailLoginTxt')!.style.display = 'inline';
+      this.emailLV = false;
+    }
+    if (emailRegex.test(emailR) || emailR == '') {
+      document.getElementById('emailRegisterTxt')!.style.border = '';
+      document.getElementById('errorEmailRegisterTxt')!.style.display = '';
+      this.emailRV = true;
+    } else {
+      document.getElementById('emailRegisterTxt')!.style.border = '1px solid rgb(190, 12, 12)';
+      document.getElementById('errorEmailRegisterTxt')!.style.display = 'inline';
+      this.emailRV = false;
+    }
   };
   
-  validatePassword(event: any) {
+  autoValidatePassword(event: any) {
     const passwordRegex = /^[a-zA-Z0-9]{8,16}$/;
     let passwordL = (<HTMLInputElement>document.getElementById('passwordLoginTxt')).value;
     let passwordR = (<HTMLInputElement>document.getElementById('passwordRegisterTxt')).value;
 
-    //if (passwordL !== '') {
-      if (passwordRegex.test(passwordL) || passwordL == '') {
-        document.getElementById('passwordLoginTxt')!.style.border = '';
-        document.getElementById('errorPasswordLoginTxt')!.style.display = '';
-      } else {
-        document.getElementById('passwordLoginTxt')!.style.border = '1px solid rgb(190, 12, 12)';
-        document.getElementById('errorPasswordLoginTxt')!.style.display = 'inline';
-      }
-    //}
-    //if (passwordR !== '') {
-      if (passwordRegex.test(passwordR) || passwordR == '') {
-        document.getElementById('passwordRegisterTxt')!.style.border = '';
-        document.getElementById('errorPasswordRegisterTxt')!.style.display = '';
-      } else {
-        document.getElementById('passwordRegisterTxt')!.style.border = '1px solid rgb(190, 12, 12)';
-        document.getElementById('errorPasswordRegisterTxt')!.style.display = 'inline';
-      }
-    //}
+  if (passwordRegex.test(passwordL) || passwordL == '') {
+    document.getElementById('passwordLoginTxt')!.style.border = '';
+    document.getElementById('errorPasswordLoginTxt')!.style.display = '';
+    this.pwrLV = true;
+  } else {
+    document.getElementById('passwordLoginTxt')!.style.border = '1px solid rgb(190, 12, 12)';
+    document.getElementById('errorPasswordLoginTxt')!.style.display = 'inline';
+    this.pwrLV = false;
+  }
+  if (passwordRegex.test(passwordR) || passwordR == '') {
+    document.getElementById('passwordRegisterTxt')!.style.border = '';
+    document.getElementById('errorPasswordRegisterTxt')!.style.display = '';
+    this.pwrRV = true;
+  } else {
+    document.getElementById('passwordRegisterTxt')!.style.border = '1px solid rgb(190, 12, 12)';
+    document.getElementById('errorPasswordRegisterTxt')!.style.display = 'inline';
+    this.pwrRV = false;
+  }
     
   }
 
-  validateConfirmPassword(event: any) {
+  autoValidateConfirmPassword(event: any) {
     let password = (<HTMLInputElement>document.getElementById('passwordRegisterTxt')).value;
     let passwordConfirm = (<HTMLInputElement>document.getElementById('passwordConfirmTxt')).value;
 
     if (password === passwordConfirm || passwordConfirm == '') {
       document.getElementById('passwordConfirmTxt')!.style.border = '';
       document.getElementById('errorPasswordConfirmTxt')!.style.display = '';
-    } else {
+      this.cPwrRV = true;
+  } else {
       document.getElementById('passwordConfirmTxt')!.style.border = '1px solid rgb(190, 12, 12)';
       document.getElementById('errorPasswordConfirmTxt')!.style.display = 'inline';
+      this.cPwrRV = false;
     }
+  }
+
+  inputRegisterValidate() {
+    if (this.emailRV == true && this.pwrRV == true && this.cPwrRV == true) {
+      this.userRegister();
+    }
+  }
+
+  userRegister() {
+    localStorage.setItem('userName', (<HTMLInputElement>document.getElementById('emailRegisterTxt')).value)
+    localStorage.setItem('userPwr', (<HTMLInputElement>document.getElementById('passwordRegisterTxt')).value)
+
+    this.goMenu();
+  }
+
+  inputLoginValidate() {
+    if (this.emailLV == true && this.pwrLV == true) {
+      this.userLogin();
+    }
+  }
+
+  userLogin() {
+    let emailL = (<HTMLInputElement>document.getElementById('emailLoginTxt')).value;
+    let pwrL = (<HTMLInputElement>document.getElementById('passwordLoginTxt')).value;
+    
+    if (localStorage.getItem('userName') === emailL && localStorage.getItem('userPwr') === pwrL) {
+      this.goMenu();
+    }
+   
   }
 
 }

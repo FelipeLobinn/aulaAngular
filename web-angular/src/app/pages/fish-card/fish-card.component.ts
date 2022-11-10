@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { isDefined } from '@ng-bootstrap/ng-bootstrap/util/util';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-fish-card',
@@ -10,18 +11,17 @@ export class FishCardComponent implements OnInit {
 
   @Input() dataFishes: any;
   
-  constructor() { }
+  constructor(
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
-    let string: string = this.dataFishes.Taste;
-    this.dataFishes.Taste = string!.replace(/<[^>]*>/g, '');
+    let string: string = this.dataFishes['Physical Description'];
+    this.dataFishes['Physical Description'] = string!.replace(/<[^>]*>/g, '');
   }
 
-  aaa() {
-    
-    
-    //console.log(string)
-    console.log(this.dataFishes.Taste)
-    //console.log(this.dataFishes)
+  readMore(){
+    const modal = this.modalService.open(ModalComponent)
+    modal.componentInstance.dataFishes = this.dataFishes;
   }
 }
