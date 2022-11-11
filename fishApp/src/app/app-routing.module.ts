@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'fish-page',
     loadChildren: () => import('./fish-page/fish-page.module').then( m => m.FishPagePageModule)
+  },
+  {
+    path: 'fish-details',
+    loadChildren: () => import('./fish-details/fish-details.module').then( m => m.FishDetailsPageModule)
   }
 ];
 

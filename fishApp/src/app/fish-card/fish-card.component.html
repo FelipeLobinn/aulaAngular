@@ -1,0 +1,21 @@
+<div class="containerFish">
+  <div class="">       
+      <img [src]="dataFish['Species Illustration Photo']?.src" class="imgSize" />
+  </div>
+  <div class="">
+      <div class="">
+          Nome: {{ dataFish['Species Name'] }}
+          Descrição: {{ dataFish['Fishing Rate'] }}
+      </div>
+  </div>
+  <div class="row">
+      <div class="ion-text-center">
+        <ion-button (click)="fishDetails(dataFish)" >Detalhes</ion-button>
+          <!-- <ion-fab class="fishFab">
+            <ion-fab-button >
+              <ion-icon name="add" (click)="details()" ></ion-icon>
+            </ion-fab-button>
+          </ion-fab> -->
+      </div>
+  </div>
+</div>
